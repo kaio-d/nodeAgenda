@@ -1,0 +1,54 @@
+<%- include('includes/head') %> <%- include('includes/nav') %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8 my-5">
+      <h1 class="text-center">Profile</h1>
+      <div style="display: flex; align-items: center; justify-content: center; margin: 20px 0;">
+        <img src="/assets/img/avatar-default-svgrepo-com.svg" alt="Avatar padrão" style="width: 80px; height: 80px;">
+      </div>
+      <p class="text-center lead"><%= user.name %></p>
+
+      <%- include('includes/messages') %>
+
+      <div class="row">
+        <div class="col-lg">
+          <h4>Informações pessoais</h4>
+          <form action="/login" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input
+                name="email"
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Endereço de email"
+                value="<%= user.email %>"
+                disabled
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Senha</label>
+              <input
+                name="password"
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Senha"
+                value="******"
+                disabled
+              />
+            </div>
+            <button type="submit" class="btn btn-primary my-3">
+              Alterar dados
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+</div>
+<%- include('includes/footer') %>
