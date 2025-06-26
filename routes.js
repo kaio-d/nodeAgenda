@@ -12,7 +12,7 @@ route.get("/", homeController.index);
 // Login
 route.get("/login", loginController.index);
 route.get("/login/logout", loginController.logout);
-route.post("/login", loginController.login);
+route.post("/login", loginController.login);        
 
 // Register
 route.get("/register", registerController.index);
@@ -21,6 +21,7 @@ route.post("/register", registerController.register);
 // Contato
 route.get("/contato", loguinRequired, contatoController.index);
 route.get("/contato/:id", loguinRequired, contatoController.editIndex);
+route.get("/contato/delete/:id", loguinRequired, contatoController.delete);
 route.post("/contato/register", loguinRequired, contatoController.register);
-route.post("/contato/edit/:id", loguinRequired, contatoController.edit)
+route.post("/contato/edit/:id", loguinRequired, contatoController.edit);
 module.exports = route;
