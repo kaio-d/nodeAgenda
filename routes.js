@@ -22,5 +22,5 @@ route.post("/register", registerController.register);
 route.get("/contato", loguinRequired, contatoController.index);
 route.get("/contato/:id", loguinRequired, contatoController.editIndex);
 route.post("/contato/register", loguinRequired, contatoController.register);
-
+route.post("/contato/edit/:id", loguinRequired, contatoController.edit)
 module.exports = route;
